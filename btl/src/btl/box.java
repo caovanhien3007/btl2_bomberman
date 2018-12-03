@@ -1,12 +1,13 @@
 package btl;
 
 import java.awt.*;
-import java.awt.Graphics;
 import java.util.ArrayList;
+
+import javax.swing.ImageIcon;
 
 
 public class box {
-	private Color c= Color.BLUE;
+	private  ImageIcon icon = new ImageIcon("box.png");
 	private int x;
 	private int y;
 	private item Item=new item();
@@ -17,12 +18,9 @@ public class box {
     	this.y=y;
     	this.Item.setName(i);
     }
-    public void pBox(Graphics g)
+    public void pBox(Graphics g,Component c)
     {
-    	
-    		g.setColor(c);
-    		g.fillOval(x, y, 40, 40);
-    	
+    	icon.paintIcon(c, g, x, y);
     }
     public void breakBox(ArrayList<item> Item) {
     	if(this.ni&&this.Item.getName()!=0)
@@ -32,15 +30,10 @@ public class box {
     		this.ni=false;
     		
     	}
-    	c= Color.BLACK;
+     icon = new ImageIcon ("box2.png");
     
     }
-	public Color getC() {
-		return c;
-	}
-	public void setC(Color c) {
-		this.c = c;
-	}
+	
 	public int getX() {
 		return x;
 	}

@@ -6,7 +6,7 @@ import javax.swing.ImageIcon;
 
 import java.awt.*;
 
-public class MOVE {
+public class MOVE { 
 	private boolean live =true;
 	private ImageIcon icon = new ImageIcon("down1.png");
 	public boolean isLive() {
@@ -15,7 +15,21 @@ public class MOVE {
 	public void setLive(boolean live) {
 		this.live = live;
 	}
+	private boolean Win=false;
 	
+	public boolean isWin() {
+		return Win;
+	}
+	public void setWin(boolean win) {
+		Win = win;
+	}
+	private int spe=5;
+	public int getSpe() {
+		return spe;
+	}
+	public void setSpe(int spe) {
+		this.spe = spe;
+	}
 	private boolean right =false;
 	private boolean left=false;
 	private boolean up=false;
@@ -60,8 +74,8 @@ public class MOVE {
 				}				
 			}
 			if(m) {
-			x=x+5;
-			if(x>720)x=x-5;
+			x=x+spe;
+			if(x>720)x=x-spe;
 			if(x%40==0)right=false;
 			}else right=false;
 			}
@@ -85,8 +99,8 @@ public class MOVE {
 				}				
 			}
 			if(m) {
-			x=x-5;
-			if(x<0)x=x+5;
+			x=x-spe;
+			if(x<0)x=x+spe;
 			if(x%40==0)left=false;
 			}else left=false;
 			}
@@ -111,8 +125,8 @@ public class MOVE {
 				}				
 			}
 			if(m) { 
-			y=y-5;
-			if(y<0)y=y+5;
+			y=y-spe;
+			if(y<0)y=y+spe;
 			if(y%40==0)up=false;
 			}else up=false;
 		}
@@ -136,8 +150,8 @@ public class MOVE {
 				}				
 			}
 			if(m) {
-			y=y+5;
-			if(y>560)y=y-5;
+			y=y+spe;
+			if(y>560)y=y-spe;
 			if(y%40==0)down=false;
 			}else down=false;
 		}

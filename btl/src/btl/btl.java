@@ -9,16 +9,19 @@ public class btl {
 public static void main(String []arg)
 {
 	JButton bt = new JButton(); 
-	game Game = new game();
+	game Game = new game(1);
 	JFrame main =new JFrame();
-	main.setBounds(10, 10, 770, 630);
+	main.setBounds(100, 100, 770, 630);
 	main.setBackground(Color.black);
-	main.setVisible(true);
 	main.setResizable(false);
 	main.add(Game);
 	Game.setJf(main);
 	main.setDefaultCloseOperation(main.EXIT_ON_CLOSE);
-	int a=0;
+	
+	main begin=new main(main);
+	Game.setbe(begin);
+   begin.setJf(begin);
+   begin.setVisible(true);
 	//a=nhap.nextInt();
 }
 }

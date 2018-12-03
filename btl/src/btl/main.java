@@ -15,31 +15,30 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.ContainerAdapter;
 import java.awt.event.ContainerEvent;
+import javax.swing.ImageIcon;
 
 public class main extends JFrame {
 
 	private JPanel contentPane;
-	private JPanel Game = new game();
+	private JFrame jf;
+	
+	public JFrame getJf() {
+		return jf;
+	}
+
+	public void setJf(JFrame jf) {
+		this.jf = jf;
+	}
+
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					main frame = new main();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+	
 
 	/**
 	 * Create the frame.
 	 */
-	public main() {
+	public main(JFrame n ) {
 		addContainerListener(new ContainerAdapter() {
 			@Override
 			public void componentAdded(ContainerEvent arg0) {
@@ -53,18 +52,20 @@ public class main extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		JLabel lblNewLabel_1 = new JLabel("bomer man");
-		lblNewLabel_1.addMouseListener(new MouseAdapter() {
+		JLabel lblNewLabel_1 = new JLabel("");
+		lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\user56\\Documents\\eclipse\\btl\\begin.jpg"));	
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.addMouseListener(new MouseAdapter() {
 			@Override
-			public void mouseClicked(MouseEvent arg0) {
-				contentPane = new game();
-				
-			
+			public void mouseClicked(MouseEvent e) {
+				jf.setVisible(false);
+				n.setVisible(true);
 			}
-			
 		});
+		lblNewLabel.setBounds(107, 294, 271, 75);
+		contentPane.add(lblNewLabel);
 		lblNewLabel_1.setFont(new Font("Vladimir Script", Font.BOLD, 65));
-		lblNewLabel_1.setBounds(91, 97, 532, 131);
+		lblNewLabel_1.setBounds(0, 0, 764, 520);
 		contentPane.add(lblNewLabel_1);
 	}
 }

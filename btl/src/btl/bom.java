@@ -61,7 +61,6 @@ public class bom {
   							p=false;
   							box.get(j).breakBox(Item);
   							if(time==50)box.remove(j);		
-  							icon.paintIcon(c, g, Bom.getX()+40*i,Bom.getY());
   						}
   					}
   					
@@ -165,7 +164,7 @@ public class bom {
   	  						icon.paintIcon(c, g, Bom.getX(),Bom.getY()+i*40);;
   	  				       boss.get(j).breakb();
 	  					   if(time==50)
-  	  						{
+  	  						{ 
 	  						   boss.remove(j);
 	  						   j--;
   	  						}

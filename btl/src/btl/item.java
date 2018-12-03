@@ -21,5 +21,11 @@ public class item {
 	public void setPos(point pos) {
 		this.pos = pos;
 	}
-
+    public void efItem(bom Bom,MOVE bomer)
+    {
+    	if(this.name==1)bomer.setWin(true);
+    	if(this.name==2)Bom.setSizeBom(Bom.getSizeBom()+1);
+    	if(this.name==3)bomer.setSpe(10);
+    }
+    
 }

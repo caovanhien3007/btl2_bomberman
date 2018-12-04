@@ -200,8 +200,8 @@ public class game extends JPanel implements KeyListener, ActionListener {
 		
 		if(e.getKeyCode()==KeyEvent.VK_SPACE&&Bom.getTime()==0)
 		{
-			Bom.getBom().setX((bomer.getX()/40)*40);
-			Bom.getBom().setY((bomer.getY()/40)*40);
+			Bom.getBom().setX(((bomer.getX()+20)/40)*40);
+			Bom.getBom().setY(((bomer.getY()+20)/40)*40);
 			
 		Bom.setTime(1);
 	
